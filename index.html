@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1.2: Three Types of AI Intelligence - Standards Alignment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .selector-section {
+            background: #e8f4f8;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 2px solid #667eea;
+        }
+
+        .selector-label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .state-selector {
+            width: 100%;
+            padding: 15px;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .state-selector:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+        }
+
+        .standards-display {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .standards-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .standards-header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .standards-section {
+            margin-bottom: 25px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+
+        .standards-section h3 {
+            color: #667eea;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 5px;
+        }
+
+        .standard-item {
+            background: white;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .standard-code {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 0.9rem;
+        }
+
+        .standard-text {
+            margin-top: 5px;
+            color: #555;
+        }
+
+        .lesson-info {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #667eea;
+        }
+
+        .lesson-info h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            background: #f8f9fa;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .selector-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Lesson 1.2: Three Types of AI Intelligence</h1>
+            <p>Standards Alignment Tool for Teachers</p>
+        </div>
+
+        <div class="content">
+            <div class="lesson-info">
+                <h3>Lesson Overview</h3>
+                <p><strong>Lesson 1.2</strong> introduces students to three distinct types of artificial intelligence: Visual AI (computer vision), Auditory AI (speech recognition), and Textual AI (natural language processing). Through real-world examples and analysis of each type's capabilities and limitations, students understand how AI processes different forms of information through pattern recognition. The lesson emphasizes that AI recognizes patterns without truly understanding meaning, preparing students for hands-on work with Alia (a Textual AI) in subsequent lessons.</p>
+            </div>
+
+            <div class="selector-section">
+                <div class="selector-label">Select your state or standards framework:</div>
+                <select id="stateSelector" class="state-selector">
+                    <option value="">Choose your state...</option>
+                    <option value="c3">C3 Framework (National Social Studies)</option>
+                    <option value="california">California</option>
+                    <option value="texas">Texas</option>
+                    <option value="florida">Florida</option>
+                    <option value="new_york">New York</option>
+                    <option value="pennsylvania">Pennsylvania</option>
+                    <option value="illinois">Illinois</option>
+                    <option value="ohio">Ohio</option>
+                    <option value="georgia">Georgia</option>
+                    <option value="north_carolina">North Carolina</option>
+                    <option value="michigan">Michigan</option>
+                    <option value="washington">Washington</option>
+                    <option value="mississippi">Mississippi</option>
+                </select>
+            </div>
+
+            <div id="standardsDisplay" class="standards-display">
+                <!-- Standards content will be populated here -->
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Understanding AI: A Conceptual and Experiential Approach - Lesson 1.2</p>
+        </div>
+    </div>
+
+    <script>
+        const standardsData = {
+            c3: {
+                title: "C3 Framework - College, Career, and Civic Life (National)",
+                sections: {
+                    "Dimension 2 - Economics": [
+                        {
+                            code: "D2.Eco.14.9-12",
+                            text: "Analyze how technological innovations have affected economic decision-making and behaviors."
+                        }
+                    ],
+                    "Dimension 3 - Evaluating Sources": [
+                        {
+                            code: "D3.1.9-12",
+                            text: "Gather relevant information from multiple sources representing a wide range of views while using the origin, authority, structure, context, and corroborative value of the sources to guide the selection."
+                        },
+                        {
+                            code: "D3.2.9-12",
+                            text: "Evaluate the credibility of a source by examining how experts value the source."
+                        }
+                    ],
+                    "Dimension 4 - Communicating Conclusions": [
+                        {
+                            code: "D4.1.9-12",
+                            text: "Construct arguments using precise and knowledgeable claims, with evidence from multiple sources, while acknowledging counterclaims and evidentiary weaknesses."
+                        },
+                        {
+                            code: "D4.2.9-12",
+                            text: "Construct explanations using sound reasoning, correct sequence (linear or non-linear), examples, and details with significant and pertinent information and data."
+                        }
+                    ]
+                }
+            },
+            california: {
+                title: "California Education Standards",
+                sections: {
+                    "CTE - Information and Communication Technologies": [
+                        {
+                            code: "ICT 4.1",
+                            text: "Understand artificial intelligence concepts and identify real-world applications of AI systems."
+                        },
+                        {
+                            code: "ICT 4.2",
+                            text: "Analyze ethical implications of artificial intelligence in society."
+                        },
+                        {
+                            code: "ICT 8.1",
+                            text: "Use critical thinking to make informed decisions and solve problems in technology contexts."
+                        }
+                    ],
+                    "ELA - Reading Informational Text": [
+                        {
+                            code: "RI.9-10.2",
+                            text: "Determine a central idea of a text and analyze its development over the course of the text, including how it emerges and is shaped and refined by specific details."
+                        },
+                        {
+                            code: "RI.9-10.3",
+                            text: "Analyze how the author unfolds an analysis or series of ideas or events, including the order in which the points are made, how they are introduced and developed, and the connections that are drawn between them."
+                        }
+                    ],
+                    "ELA - Writing": [
+                        {
+                            code: "W.9-10.2",
+                            text: "Write informative/explanatory texts to examine and convey complex ideas, concepts, and information clearly and accurately through the effective selection, organization, and analysis of content."
+                        }
+                    ]
+                }
+            },
+            texas: {
+                title: "Texas Essential Knowledge and Skills (TEKS)",
+                sections: {
+                    "CTE - Information Technology": [
+                        {
+                            code: "IT §130.277(c)(6)(A)",
+                            text: "The student analyzes the impact of emerging technologies. The student is expected to evaluate the impact of artificial intelligence on society."
+                        },
+                        {
+                            code: "IT §130.277(c)(6)(C)",
+                            text: "The student is expected to analyze ethical and legal issues related to the use of information technology."
+                        }
+                    ],
+                    "ELA - Reading": [
+                        {
+                            code: "E1.5(F)",
+                            text: "Make inferences and use evidence to support understanding."
+                        },
+                        {
+                            code: "E1.5(H)",
+                            text: "Synthesize information to create new understanding."
+                        }
+                    ],
+                    "ELA - Composition": [
+                        {
+                            code: "E1.11(B)",
+                            text: "Compose informational texts, including multi-paragraph essays that convey information about a topic, using a clear controlling idea or thesis statement and genre characteristics and craft."
+                        }
+                    ]
+                }
+            },
+            florida: {
+                title: "Florida Standards",
+                sections: {
+                    "CTE - Information Technology": [
+                        {
+                            code: "IT-ITS 5.0",
+                            text: "Describe emerging technologies that affect the field of information technology."
+                        }
+                    ],
+                    "Digital Literacy & Computer Science": [
+                        {
+                            code: "CS.912.CS-CS.1.3",
+                            text: "Describe how artificial intelligence drives many software and physical systems."
+                        },
+                        {
+                            code: "CS.912.IC-SI.1.1",
+                            text: "Explain the impacts of computing on societal issues."
+                        }
+                    ],
+                    "ELA - Reading Informational Text": [
+                        {
+                            code: "LAFS.910.RI.2.4",
+                            text: "Determine the meaning of words and phrases as they are used in a text, including figurative, connotative, and technical meanings; analyze the cumulative impact of specific word choices on meaning and tone."
+                        },
+                        {
+                            code: "LAFS.910.RI.1.2",
+                            text: "Determine a central idea of a text and analyze its development over the course of the text, including how it emerges and is shaped and refined by specific details."
+                        }
+                    ]
+                }
+            },
+            new_york: {
+                title: "New York State Standards",
+                sections: {
+                    "Computer Science & Digital Fluency": [
+                        {
+                            code: "9-12.IC.5",
+                            text: "Describe ways that complex computer systems can be designed for inclusivity and to mitigate unintended consequences."
+                        },
+                        {
+                            code: "9-12.IC.7",
+                            text: "Investigate the use of computer science in multiple fields."
+                        }
+                    ],
+                    "ELA - Reading Informational Text": [
+                        {
+                            code: "RI.9-10.2",
+                            text: "Determine a central idea of a text and analyze its development over the course of the text, including how it emerges and is shaped and refined by specific details."
+                        },
+                        {
+                            code: "RI.9-10.3",
+                            text: "Analyze how the author unfolds an analysis or series of ideas or events, including the order in which the points are made and the connections that are drawn between them."
+                        }
+                    ],
+                    "ELA - Writing": [
+                        {
+                            code: "W.9-10.2",
+                            text: "Write informative/explanatory texts to examine and convey complex ideas, concepts, and information clearly and accurately."
+                        }
+                    ]
+                }
+            },
+            pennsylvania: {
+                title: "Pennsylvania Academic Standards",
+                sections: {
+                    "Economics": [
+                        {
+                            code: "6.4.12.E",
+                            text: "Explain how changes in technology affect businesses and individuals."
+                        }
+                    ],
+                    "Reading Informational Text": [
+                        {
+                            code: "CC.1.2.9-10.A",
+                            text: "Determine a central idea of a text and analyze its development over the course of the text."
+                        },
+                        {
+                            code: "CC.1.2.9-10.C",
+                            text: "Apply appropriate strategies to analyze, interpret, and evaluate how an author unfolds an analysis or series of ideas or events."
+                        }
+                    ],
+                    "Writing": [
+                        {
+                            code: "CC.1.4.9-10.A",
+                            text: "Write informative/explanatory texts to examine and convey complex ideas, concepts, and information clearly and accurately."
+                        }
+                    ]
+                }
+            },
+            illinois: {
+                title: "Illinois Learning Standards",
+                sections: {
+                    "Computer Science": [
+                        {
+                            code: "9-12.IC.SI.1",
+                            text: "Evaluate the ways computing impacts personal, ethical, social, economic, and cultural practices."
+                        },
+                        {
+                            code: "9-12.IC.C.1",
+                            text: "Evaluate computational artifacts to maximize their beneficial effects and minimize harmful effects on society."
+                        }
+                    ],
+                    "ELA - Reading": [
+                        {
+                            code: "RI.9-10.2",
+                            text: "Determine a central idea of a text and analyze its development over the course of the text."
+                        },
+                        {
+                            code: "RI.9-10.8",
+                            text: "Delineate and evaluate the argument and specific claims in a text, assessing whether the reasoning is valid and the evidence is relevant and sufficient."
+                        }
+                    ],
+                    "ELA - Writing": [
+                        {
+                            code: "W.9-10.2",
+                            text: "Write informative/explanatory texts to examine and convey complex ideas, concepts, and information clearly and accurately."
+                        }
+                    ]
+                }
+            },
+            ohio: {
+                title: "Ohio Learning Standards",
+                sections: {
+                    "Computer Science": [
+                        {
+                            code: "CS.HS.IC.1",
+                            text: "Evaluate the beneficial and harmful effects computing has had on society."
+                        }
+                    ],
+                    "ELA - Reading Informational Text": [
+                        {
+                            code: "RI.9-10.2",
+                            text: "Determine a central idea of a text and analyze its development over the course of the text, including how it emerges and is shaped and refined by specific details."
+                        },
+                        {
+                            code: "RI.9-10.3",
+                            text: "Analyze how the author unfolds an analysis or series of ideas or events, including the order in which the points are made and the connections between them."
+                        }
+                    ],
+                    "ELA - Writing": [
+                        {
+                            code: "W.9-10.2",
+                            text: "Write informative/explanatory texts to examine and convey complex ideas, concepts, and information clearly and accurately."
+                        }
+                    ]
+                }
+            },
+            georgia: {
+                title: "Georgia Standards of Excellence",
+                sections: {
+                    "Information Technology": [
+                        {
+                            code: "IT-ITS-1",
+                            text: "Students will explore information technology careers, emerging technologies, and pathways."
+                        },
+                        {
+                            code: "IT-WD-5",
+                            text: "Students will evaluate emerging technologies and their impact on society."
+                        }
+                    ],
+                    "ELA - Reading": [
+                        {
+                            code: "ELAGSE9-10RI2",
+                            text: "Determine a central idea of a text and analyze its development over the course of the text."
+                        },
+                        {
+                            code: "ELAGSE9-10RI3",
+                            text: "Analyze how the author unfolds an analysis or series of ideas or events, including the order in which the points are made and the connections drawn between them."
+                        }
+                    ],
+                    "ELA - Writing": [
+                        {
+                            code: "ELAGSE9-10W2",
+                            text: "Write informative/explanatory texts to examine and convey complex ideas, concepts, and information clearly and accurately."
+                        }
+                    ]
+                }
+            },
+            north_carolina: {
+                title: "North Carolina Standard Course of Study",
+                sections: {
+                    "Computer Science": [
+                        {
+                            code: "CS.IC.9-12.1",
+                            text: "Evaluate the beneficial and harmful effects that computational artifacts and innovations have on society, economy, and culture."
+                        },
+                        {
+                            code: "CS.IC.9-12.2",
+                            text: "Evaluate the impact of equity, access, and influence on the distribution of computing resources in a global society."
+                        }
+                    ],
+                    "ELA - Reading": [
+                        {
+                            code: "RI.9-10.2",
+                            text: "Determine a central idea of a text and analyze its development over the course of the text."
+                        },
+                        {
+                            code: "RI.9-10.3",
+                            text: "Analyze how the author unfolds an analysis or series of ideas or events."
+                        }
+                    ],
+                    "ELA - Writing": [
+                        {
+                            code: "W.9-10.2",
+                            text: "Write informative/explanatory texts to examine and convey complex ideas, concepts, and information clearly and accurately."
+                        }
+                    ]
+                }
+            },
+            michigan: {
+                title: "Michigan Academic Standards",
+                sections: {
+                    "Computer Science": [
+                        {
+                            code: "HS.IC.SI.1",
+                            text: "Evaluate the ways computing impacts personal, ethical, social, economic, and cultural practices."
+                        },
+                        {
+                            code: "HS.IC.C.1",
+                            text: "Evaluate computational artifacts to maximize their beneficial effects and minimize harmful effects on society."
+                        }
+                    ],
+                    "ELA - Reading": [
+                        {
+                            code: "RI.9-10.2",
+                            text: "Determine a central idea of a text and analyze its development over the course of the text."
+                        },
+                        {
+                            code: "RI.9-10.3",
+                            text: "Analyze how the author unfolds an analysis or series of ideas or events."
+                        }
+                    ],
+                    "ELA - Writing": [
+                        {
+                            code: "W.9-10.2",
+                            text: "Write informative/explanatory texts to examine and convey complex ideas, concepts, and information clearly and accurately."
+                        }
+                    ]
+                }
+            },
+            washington: {
+                title: "Washington State Learning Standards",
+                sections: {
+                    "Computer Science": [
+                        {
+                            code: "9-12.IC.SI.01",
+                            text: "Evaluate computational artifacts with regard to improving their beneficial effects and reducing harmful effects on society."
+                        },
+                        {
+                            code: "9-12.IC.C.01",
+                            text: "Evaluate the ways computing innovations impact culture, society, and individuals."
+                        }
+                    ],
+                    "ELA - Reading": [
+                        {
+                            code: "RI.9-10.2",
+                            text: "Determine a central idea of a text and analyze its development over the course of the text."
+                        },
+                        {
+                            code: "RI.9-10.3",
+                            text: "Analyze how the author unfolds an analysis or series of ideas or events."
+                        }
+                    ],
+                    "ELA - Writing": [
+                        {
+                            code: "W.9-10.2",
+                            text: "Write informative/explanatory texts to examine and convey complex ideas, concepts, and information clearly and accurately."
+                        }
+                    ]
+                }
+            },
+            mississippi: {
+                title: "Mississippi College and Career Readiness Standards",
+                sections: {
+                    "Career and Technical Education - IT": [
+                        {
+                            code: "IT.1.1",
+                            text: "Demonstrate knowledge of information technology industry, emerging technologies, and career pathways."
+                        },
+                        {
+                            code: "IT.4.1",
+                            text: "Evaluate the impact of emerging technologies on businesses, industries, and society."
+                        }
+                    ],
+                    "ELA - Reading": [
+                        {
+                            code: "CCR.Reading.9-12.2",
+                            text: "Determine central ideas or themes of a text and analyze their development; summarize the key supporting details and ideas."
+                        },
+                        {
+                            code: "CCR.Reading.9-12.3",
+                            text: "Analyze how and why individuals, events, and ideas develop and interact over the course of a text."
+                        }
+                    ],
+                    "ELA - Writing": [
+                        {
+                            code: "CCR.Writing.9-12.2",
+                            text: "Write informative/explanatory texts to examine and convey complex ideas and information clearly and accurately through the effective selection, organization, and analysis of content."
+                        }
+                    ]
+                }
+            }
+        };
+
+        document.getElementById('stateSelector').addEventListener('change', function() {
+            const selectedState = this.value;
+            const displayDiv = document.getElementById('standardsDisplay');
+            
+            if (selectedState && standardsData[selectedState]) {
+                displayStandards(selectedState);
+                displayDiv.style.display = 'block';
+            } else {
+                displayDiv.style.display = 'none';
+            }
+        });
+
+        function displayStandards(state) {
+            const data = standardsData[state];
+            const displayDiv = document.getElementById('standardsDisplay');
+            
+            let html = `
+                <div class="standards-header">
+                    <h2>${data.title}</h2>
+                    <p>Standards addressed by Lesson 1.2: Three Types of AI Intelligence</p>
+                </div>
+            `;
+            
+            for (const [sectionName, standards] of Object.entries(data.sections)) {
+                html += `
+                    <div class="standards-section">
+                        <h3>${sectionName}</h3>
+                `;
+                
+                standards.forEach(standard => {
+                    html += `
+                        <div class="standard-item">
+                            <div class="standard-code">${standard.code}</div>
+                            <div class="standard-text">${standard.text}</div>
+                        </div>
+                    `;
+                });
+                
+                html += `</div>`;
+            }
+            
+            displayDiv.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
