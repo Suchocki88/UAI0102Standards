@@ -192,10 +192,9 @@
             <div class="selector-section">
                 <div class="selector-label">Select your state or standards framework:</div>
                 <select id="stateSelector" class="state-selector">
-                    <option value="">Choose your state...</option>
-                    <option value="c3">C3 Framework (National Social Studies)</option>
+                    <option value="">-- Choose State Standards --</option>
+                    <option value="texas">Texas (TEKS)</option>
                     <option value="california">California</option>
-                    <option value="texas">Texas</option>
                     <option value="florida">Florida</option>
                     <option value="new_york">New York</option>
                     <option value="pennsylvania">Pennsylvania</option>
@@ -204,8 +203,15 @@
                     <option value="georgia">Georgia</option>
                     <option value="north_carolina">North Carolina</option>
                     <option value="michigan">Michigan</option>
+                    <option value="virginia">Virginia</option>
                     <option value="washington">Washington</option>
                     <option value="mississippi">Mississippi</option>
+                    <option value="colorado">Colorado</option>
+                    <option value="ccss_math">Common Core State Standards (CCSS) - Math</option>
+                    <option value="ngss">Next Generation Science Standards (NGSS)</option>
+                    <option value="iste">ISTE Standards for Students</option>
+                    <option value="csta">CSTA K-12 Computer Science Standards</option>
+                    <option value="c3">C3 Framework for Social Studies</option>
                 </select>
             </div>
 
@@ -221,33 +227,33 @@
 
     <script>
         const standardsData = {
-            c3: {
-                title: "C3 Framework - College, Career, and Civic Life (National)",
+            texas: {
+                title: "Texas Essential Knowledge and Skills (TEKS)",
                 sections: {
-                    "Dimension 2 - Economics": [
+                    "CTE - Information Technology": [
                         {
-                            code: "D2.Eco.14.9-12",
-                            text: "Analyze how technological innovations have affected economic decision-making and behaviors."
-                        }
-                    ],
-                    "Dimension 3 - Evaluating Sources": [
-                        {
-                            code: "D3.1.9-12",
-                            text: "Gather relevant information from multiple sources representing a wide range of views while using the origin, authority, structure, context, and corroborative value of the sources to guide the selection."
+                            code: "IT §130.277(c)(6)(A)",
+                            text: "The student analyzes the impact of emerging technologies. The student is expected to evaluate the impact of artificial intelligence on society."
                         },
                         {
-                            code: "D3.2.9-12",
-                            text: "Evaluate the credibility of a source by examining how experts value the source."
+                            code: "IT §130.277(c)(6)(C)",
+                            text: "The student is expected to analyze ethical and legal issues related to the use of information technology."
                         }
                     ],
-                    "Dimension 4 - Communicating Conclusions": [
+                    "ELA - Reading": [
                         {
-                            code: "D4.1.9-12",
-                            text: "Construct arguments using precise and knowledgeable claims, with evidence from multiple sources, while acknowledging counterclaims and evidentiary weaknesses."
+                            code: "E1.5(F)",
+                            text: "Make inferences and use evidence to support understanding."
                         },
                         {
-                            code: "D4.2.9-12",
-                            text: "Construct explanations using sound reasoning, correct sequence (linear or non-linear), examples, and details with significant and pertinent information and data."
+                            code: "E1.5(H)",
+                            text: "Synthesize information to create new understanding."
+                        }
+                    ],
+                    "ELA - Composition": [
+                        {
+                            code: "E1.11(B)",
+                            text: "Compose informational texts, including multi-paragraph essays that convey information about a topic, using a clear controlling idea or thesis statement and genre characteristics and craft."
                         }
                     ]
                 }
@@ -283,37 +289,6 @@
                         {
                             code: "W.9-10.2",
                             text: "Write informative/explanatory texts to examine and convey complex ideas, concepts, and information clearly and accurately through the effective selection, organization, and analysis of content."
-                        }
-                    ]
-                }
-            },
-            texas: {
-                title: "Texas Essential Knowledge and Skills (TEKS)",
-                sections: {
-                    "CTE - Information Technology": [
-                        {
-                            code: "IT §130.277(c)(6)(A)",
-                            text: "The student analyzes the impact of emerging technologies. The student is expected to evaluate the impact of artificial intelligence on society."
-                        },
-                        {
-                            code: "IT §130.277(c)(6)(C)",
-                            text: "The student is expected to analyze ethical and legal issues related to the use of information technology."
-                        }
-                    ],
-                    "ELA - Reading": [
-                        {
-                            code: "E1.5(F)",
-                            text: "Make inferences and use evidence to support understanding."
-                        },
-                        {
-                            code: "E1.5(H)",
-                            text: "Synthesize information to create new understanding."
-                        }
-                    ],
-                    "ELA - Composition": [
-                        {
-                            code: "E1.11(B)",
-                            text: "Compose informational texts, including multi-paragraph essays that convey information about a topic, using a clear controlling idea or thesis statement and genre characteristics and craft."
                         }
                     ]
                 }
@@ -558,6 +533,37 @@
                     ]
                 }
             },
+            virginia: {
+                title: "Virginia Standards of Learning",
+                sections: {
+                    "Computer Science": [
+                        {
+                            code: "CS.9-12.IC.1",
+                            text: "Analyze the beneficial and harmful effects of computing innovations on society, economy, and culture."
+                        },
+                        {
+                            code: "CS.9-12.IC.2",
+                            text: "Evaluate the ways computing impacts personal, ethical, social, economic, and cultural practices."
+                        }
+                    ],
+                    "ELA - Reading": [
+                        {
+                            code: "9.4",
+                            text: "The student will read, comprehend, and analyze a variety of nonfiction texts including informational and technical texts."
+                        },
+                        {
+                            code: "9.5",
+                            text: "The student will read and analyze a variety of texts to determine main idea and supporting details."
+                        }
+                    ],
+                    "ELA - Writing": [
+                        {
+                            code: "9.6",
+                            text: "The student will write in a variety of forms to include expository, persuasive, reflective, and informational texts."
+                        }
+                    ]
+                }
+            },
             washington: {
                 title: "Washington State Learning Standards",
                 sections: {
@@ -616,6 +622,236 @@
                         {
                             code: "CCR.Writing.9-12.2",
                             text: "Write informative/explanatory texts to examine and convey complex ideas and information clearly and accurately through the effective selection, organization, and analysis of content."
+                        }
+                    ]
+                }
+            },
+            colorado: {
+                title: "Colorado Academic Standards",
+                sections: {
+                    "Computer Science": [
+                        {
+                            code: "HS.CS.IC.1",
+                            text: "Evaluate the beneficial and harmful effects of computing innovations on society, economy, and culture."
+                        },
+                        {
+                            code: "HS.CS.IC.2",
+                            text: "Evaluate the ways computing impacts personal, ethical, social, economic, and cultural practices."
+                        }
+                    ],
+                    "Reading, Writing, and Communicating": [
+                        {
+                            code: "RWC.09-10.2.1",
+                            text: "Analyze the development and interaction of informational and persuasive text elements over the course of a text."
+                        },
+                        {
+                            code: "RWC.09-10.3.1",
+                            text: "Write arguments to support claims in an analysis of substantive topics or texts, using valid reasoning and relevant and sufficient evidence."
+                        }
+                    ],
+                    "Science": [
+                        {
+                            code: "SC.HS.2.1",
+                            text: "Design and evaluate solutions by specifying constraints and criteria for successful solutions, and considering a wide range of potential solutions."
+                        }
+                    ]
+                }
+            },
+            ccss_math: {
+                title: "Common Core State Standards - Mathematics",
+                sections: {
+                    "Mathematical Practices": [
+                        {
+                            code: "MP.1",
+                            text: "Make sense of problems and persevere in solving them. (Applied when analyzing AI pattern recognition limitations)"
+                        },
+                        {
+                            code: "MP.3",
+                            text: "Construct viable arguments and critique the reasoning of others. (Applied when evaluating AI capabilities and limitations)"
+                        },
+                        {
+                            code: "MP.4",
+                            text: "Model with mathematics. (Applied when understanding how AI uses statistical patterns and mathematical models)"
+                        }
+                    ],
+                    "High School - Statistics & Probability": [
+                        {
+                            code: "S-ID.1",
+                            text: "Represent data with plots on the real number line. (Connects to understanding how AI processes training data)"
+                        },
+                        {
+                            code: "S-IC.1",
+                            text: "Understand statistics as a process for making inferences about population parameters based on a random sample. (Relates to AI training on sample data)"
+                        }
+                    ]
+                }
+            },
+            ngss: {
+                title: "Next Generation Science Standards (NGSS)",
+                sections: {
+                    "Science and Engineering Practices": [
+                        {
+                            code: "SEP-4",
+                            text: "Analyzing and Interpreting Data: Analyze data using computational models, statistical analysis, and representations to reveal patterns."
+                        },
+                        {
+                            code: "SEP-6",
+                            text: "Constructing Explanations: Construct and revise explanations based on valid and reliable evidence obtained from a variety of sources."
+                        },
+                        {
+                            code: "SEP-8",
+                            text: "Obtaining, Evaluating, and Communicating Information: Critically read scientific literature to determine central ideas or obtain scientific information."
+                        }
+                    ],
+                    "Crosscutting Concepts": [
+                        {
+                            code: "CCC-1",
+                            text: "Patterns: Observe patterns in systems at different scales and use patterns to classify, organize data, and identify relationships."
+                        },
+                        {
+                            code: "CCC-4",
+                            text: "Systems and System Models: Models can be used to predict system behavior and identify design features that improve system function."
+                        }
+                    ],
+                    "Engineering Design": [
+                        {
+                            code: "HS-ETS1-3",
+                            text: "Evaluate a solution to a complex real-world problem based on criteria for success and constraints including cost, safety, reliability, and societal impacts."
+                        }
+                    ]
+                }
+            },
+            iste: {
+                title: "ISTE Standards for Students",
+                sections: {
+                    "Empowered Learner": [
+                        {
+                            code: "1.b",
+                            text: "Students build networks and customize their learning environments in ways that support the learning process."
+                        },
+                        {
+                            code: "1.d",
+                            text: "Students understand the fundamental concepts of technology operations, demonstrate the ability to choose and use current technologies."
+                        }
+                    ],
+                    "Knowledge Constructor": [
+                        {
+                            code: "3.a",
+                            text: "Students plan and employ effective research strategies to locate information and other resources for their intellectual or creative pursuits."
+                        },
+                        {
+                            code: "3.b",
+                            text: "Students evaluate the accuracy, perspective, credibility and relevance of information, media, data or other resources."
+                        },
+                        {
+                            code: "3.d",
+                            text: "Students build knowledge by actively exploring real-world issues and problems, developing ideas and theories."
+                        }
+                    ],
+                    "Innovative Designer": [
+                        {
+                            code: "4.a",
+                            text: "Students know and use a deliberate design process for generating ideas, testing theories, creating innovative artifacts."
+                        }
+                    ],
+                    "Computational Thinker": [
+                        {
+                            code: "5.c",
+                            text: "Students break problems into component parts, extract key information, and develop models to facilitate problem-solving."
+                        },
+                        {
+                            code: "5.d",
+                            text: "Students understand how automation works and use algorithmic thinking to develop solutions."
+                        }
+                    ],
+                    "Global Collaborator": [
+                        {
+                            code: "7.c",
+                            text: "Students contribute constructively to project teams, assuming various roles and responsibilities to work effectively toward a common goal."
+                        }
+                    ]
+                }
+            },
+            csta: {
+                title: "CSTA K-12 Computer Science Standards",
+                sections: {
+                    "Computing Systems": [
+                        {
+                            code: "3A-CS-01",
+                            text: "Explain how abstractions hide the underlying implementation details of computing systems embedded in everyday objects."
+                        },
+                        {
+                            code: "3B-CS-01",
+                            text: "Categorize the roles of operating system software."
+                        }
+                    ],
+                    "Data & Analysis": [
+                        {
+                            code: "3A-DA-09",
+                            text: "Translate between different bit representations of real-world phenomena, such as characters, numbers, and images."
+                        },
+                        {
+                            code: "3B-DA-05",
+                            text: "Use data analysis tools and techniques to identify patterns in data representing complex systems."
+                        }
+                    ],
+                    "Algorithms & Programming": [
+                        {
+                            code: "3A-AP-13",
+                            text: "Create prototypes that use algorithms to solve computational problems by leveraging prior student knowledge."
+                        },
+                        {
+                            code: "3B-AP-08",
+                            text: "Describe how artificial intelligence drives many software and physical systems."
+                        }
+                    ],
+                    "Impacts of Computing": [
+                        {
+                            code: "3A-IC-24",
+                            text: "Evaluate the ways computing impacts personal, ethical, social, economic, and cultural practices."
+                        },
+                        {
+                            code: "3A-IC-27",
+                            text: "Use tools and methods for collaboration on a project to increase connectivity of people in different cultures."
+                        },
+                        {
+                            code: "3B-IC-25",
+                            text: "Evaluate computational artifacts to maximize their beneficial effects and minimize harmful effects on society."
+                        },
+                        {
+                            code: "3B-IC-26",
+                            text: "Evaluate the impact of equity, access, and influence on the distribution of computing resources in a global society."
+                        }
+                    ]
+                }
+            },
+            c3: {
+                title: "C3 Framework - College, Career, and Civic Life (National)",
+                sections: {
+                    "Dimension 2 - Economics": [
+                        {
+                            code: "D2.Eco.14.9-12",
+                            text: "Analyze how technological innovations have affected economic decision-making and behaviors."
+                        }
+                    ],
+                    "Dimension 3 - Evaluating Sources": [
+                        {
+                            code: "D3.1.9-12",
+                            text: "Gather relevant information from multiple sources representing a wide range of views while using the origin, authority, structure, context, and corroborative value of the sources to guide the selection."
+                        },
+                        {
+                            code: "D3.2.9-12",
+                            text: "Evaluate the credibility of a source by examining how experts value the source."
+                        }
+                    ],
+                    "Dimension 4 - Communicating Conclusions": [
+                        {
+                            code: "D4.1.9-12",
+                            text: "Construct arguments using precise and knowledgeable claims, with evidence from multiple sources, while acknowledging counterclaims and evidentiary weaknesses."
+                        },
+                        {
+                            code: "D4.2.9-12",
+                            text: "Construct explanations using sound reasoning, correct sequence (linear or non-linear), examples, and details with significant and pertinent information and data."
                         }
                     ]
                 }
